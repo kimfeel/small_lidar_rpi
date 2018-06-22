@@ -999,7 +999,8 @@ u_result RPlidarDriverSerialImpl::startMotor()
 {
     if (_isSupportingMotorCtrl) { // RPLIDAR A2
         setMotorPWM(DEFAULT_MOTOR_PWM);
-        delay(500);
+        //setMotorPWM(1023);
+		delay(500);
         return RESULT_OK;
     } else { // RPLIDAR A1
         rp::hal::AutoLocker l(_lock);

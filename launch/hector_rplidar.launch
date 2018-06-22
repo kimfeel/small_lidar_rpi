@@ -1,0 +1,18 @@
+<!--
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ -->
+<launch>
+  <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+	
+  <include file="$(find hector_mapping)/launch/mapping_default.launch"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="laser_broadcaster" args="0 0 0 0 0 0 nav base_link 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="laser_broadcaster2" args="0 0 0 0 0 0 nav base_stabilized 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="laser_broadcaster3" args="0 0 0 0 0 0 nav base_footprint 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="laser_broadcaster4" args="0 0 0 0 0 0 base_link laser 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="laser_broadcaster5" args="0 0 0 0 0 0 map nav 10"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rplidar_ros)/rviz/rplidar.rviz" />
+</launch>

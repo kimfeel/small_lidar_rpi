@@ -39,3 +39,10 @@ install(DIRECTORY launch rviz sdk
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   USE_SOURCE_PERMISSIONS
 )
+
+include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+add_definitions(-std=c++11 -I/home/rical/rplidar_ros/src)
+rosbuild_init()
+rosbuild_add_executable(voxel1 src/voxel1.cpp src/ISARC_demo.cpp)
+target_link_libraries(voxel1 lapack boost_system)
+

@@ -1,0 +1,18 @@
+<package>
+  <description brief="lidar_mapping">
+
+     lidar_mapping
+
+  </description>
+  <author>root</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/lidar_mapping</url>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="pcl_ros"/>
+
+</package>
+
+

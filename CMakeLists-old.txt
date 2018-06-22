@@ -1,0 +1,81 @@
+cmake_minimum_required(VERSION 2.4.6)
+include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+#include_directories(/home/jd/Downloads/g2o-master)
+add_definitions(-std=c++11 -I/opt/ros/indigo/share/lidar_mapping/src)
+
+# Set the build type.  Options are:
+#  Coverage       : w/ debug symbols, w/o optimization, w/ code-coverage
+#  Debug          : w/ debug symbols, w/o optimization
+#  Release        : w/o debug symbols, w/ optimization
+#  RelWithDebInfo : w/ debug symbols, w/ optimization
+#  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
+#set(ROS_BUILD_TYPE RelWithDebInfo)
+#set(CMAKE_BUILD_TYPE Debug)
+rosbuild_init()
+
+#set the default path for built executables to the "bin" directory
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+#set the default path for built libraries to the "lib" directory
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+#uncomment if you have defined messages
+#rosbuild_genmsg()
+#uncomment if you have defined services
+#rosbuild_gensrv()
+
+#common commands for building c++ executables and libraries
+#rosbuild_add_library(${PROJECT_NAME} src/example.cpp)
+#target_link_libraries(${PROJECT_NAME} another_library)
+#rosbuild_add_boost_directories()
+#rosbuild_link_boost(${PROJECT_NAME} thread)
+#rosbuild_add_executable(example examples/example.cpp)
+#target_link_libraries(example ${PROJECT_NAME})
+
+#find_package(OpenCV REQUIRED)
+
+#rosbuild_add_executable(scanRegistration src/scanRegistration.cpp)
+#rosbuild_add_executable(laserOdometry src/laserOdometry.cpp)
+#target_link_libraries(laserOdometry ${OpenCV_LIBS})
+#rosbuild_add_executable(laserMapping src/laserMapping.cpp)
+#target_link_libraries(laserMapping ${OpenCV_LIBS})
+#rosbuild_add_executable(transformMaintenance src/transformMaintenance.cpp)
+#rosbuild_add_executable(ros2pcd src/ros2pcd.cpp)
+#rosbuild_add_executable(imuFromFile src/imuFromFile.cpp)
+#rosbuild_add_executable(lidarFromFile src/lidarFromFile.cpp)
+#rosbuild_add_executable(cameraFromFile src/cameraFromFile.cpp)
+#rosbuild_add_executable(lidar_sync src/lidar_sync.cpp)
+#rosbuild_add_executable(yei3space src/yei3space.cpp)
+#rosbuild_add_executable(sick_lidar src/sick_lidar.cpp)
+rosbuild_add_executable(voxel1 src/voxel1.cpp src/ISARC_demo.cpp)
+target_link_libraries(voxel1 lapack)
+#rosbuild_add_executable(voxel_filter src/voxel_filter.cpp src/ISARC_demo.cpp)
+#rosbuild_add_executable(voxel_filter_full src/voxel_filter_full.cpp src/ISARC_demo.cpp)
+#target_link_libraries(voxel_filter lapack)
+#rosbuild_add_executable(adis16375 src/adis16375.cpp)
+#rosbuild_add_executable(v4l2 src/v4l2.cpp)
+#rosbuild_add_executable(lidar_fusion src/lidar_fusion.cpp)
+#rosbuild_add_executable(lidar_fusion_bag src/lidar_fusion_bag.cpp src/ISARC_demo.cpp)
+#rosbuild_add_executable(lidar_fusion_bag2 src/lidar_fusion_bag2.cpp src/ISARC_demo.cpp)
+#rosbuild_add_executable(lidar_fusion_static src/ISARC_demo.cpp src/lidar_fusion_static_data_saving.cpp)
+#rosbuild_add_executable(lidar_fusion src/ISARC_demo.cpp src/lidar_fusion.cpp)
+#rosbuild_add_executable(lidar_fusion_full src/ISARC_demo.cpp src/lidar_fusion_full.cpp)
+#rosbuild_add_executable(tf_broadcaster src/tf_broadcaster.cpp)
+#rosbuild_add_executable(tf_listener src/tf_listener.cpp)
+#rosbuild_add_executable(pose_fusion src/pose_fusion.cpp)
+#rosbuild_add_executable(viz_lidar src/viz_lidar.cpp)
+#target_link_libraries(viz_lidar SDL GL GLU)
+#rosbuild_add_executable(sba src/sba.cpp)
+#rosbuild_add_executable(calib src/calib.cpp)
+#rosbuild_add_executable(camera_calibration src/camera_calibration.cpp)
+#target_link_libraries(camera_calibration ${OpenCV_LIBS})
+#rosbuild_add_executable(orb_extract_pose src/orb_extract_pose.cpp)
+#target_link_libraries(orb_extract_pose SDL)
+#rosbuild_add_executable(fix_trajectory src/fix_trajectory.cpp)
+#rosbuild_add_executable(rviz_sdl src/rviz_sdl.cpp)
+#target_link_libraries(rviz_sdl SDL GL GLU)
+#rosbuild_add_executable(ahrs src/ahrs.cpp)
+#target_link_libraries(ahrs SDL GL GLU)
+#rosbuild_add_executable(limu src/limu.cpp)
+#target_link_libraries(limu SDL GL GLU g2o_core g2o_solver_dense g2o_stuff)
+#rosbuild_add_executable(veloslam src/veloslam.cpp)
+#target_link_libraries(veloslam SDL GL GLU lapack)

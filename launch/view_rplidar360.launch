@@ -1,0 +1,18 @@
+<!--
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ -->
+<launch>
+  <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+  
+  <!--node pkg="rplidar_ros"  type="voxel1" name="voxel" output="screen"/-->
+
+  <node pkg="rplidar_ros" type="stepper_motor360.py" name="stepper_motor" output="screen"/>
+
+  <node pkg="rplidar_ros" type="tf_test.py" name="tf_laser" output="screen"/>
+  
+   <!--node pkg="rosbag" type="record" name="record" output="screen" args="-O $(find rplidar_ros)/data.bag /scan /tf /steps"/--> 
+
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find rplidar_ros)/rviz/rplidar.rviz" /-->
+</launch>

@@ -1,0 +1,8 @@
+prefix=/usr
+
+Name: rplidar_ros
+Description: Description of rplidar_ros
+Version: 1.5.7
+Cflags: -I/opt/ros/kinetic/include -I/usr/include/pcl-1.7 -I/usr/include/eigen3 -I/usr/include/ni -I/usr/include/vtk-6.2 -I/usr/include/freetype2 -I/usr/include/arm-linux-gnueabihf/freetype2 -I/usr/include/arm-linux-gnueabihf -I/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent -I/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include -I/usr/lib/openmpi/include -I/usr/lib/openmpi/include/openmpi -I/usr/include/python2.7 -I/usr/include/jsoncpp -I/usr/include/hdf5/openmpi -I/usr/include/libxml2 -I/usr/include/tcl
+Libs: -L/usr/lib -lpcl_ros_filters -lpcl_ros_io -lpcl_ros_tf -lsqlite3 -ldynamic_reconfigure_config_init_mutex -lnodeletlib -lbondcpp -lclass_loader -ldl -lroslib -lrospack -lrosbag -lrosbag_storage -lroslz4 -ltopic_tools -ltf -ltf2_ros -lactionlib -lmessage_filters -lroscpp -lpthread -lxmlrpcpp -ltf2 -lroscpp_serialization -lrosconsole -lrosconsole_log4cxx -lrosconsole_backend_interface -lrostime -lcpp_common
+Requires: 
